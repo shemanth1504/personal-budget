@@ -69,7 +69,7 @@
     
             <article>
                 <h1>Chart</h1>
-                <canvas id="myChart" width="400" height="400"></canvas>
+                <canvas id="myChart" width="450" height="450"></canvas>
             </article>
     
             <article>
@@ -126,7 +126,11 @@
                             '#ffcd56',
                             '#ff6384',
                             '#36a2eb',
-                            '#fd6b19',
+                            '#ff6b19',
+                            '#ff0019',
+                            '#ffff19',
+                            '#000020',
+                            '#d20f20'
                         ]
                     }
                 ],
@@ -147,8 +151,8 @@
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
                     dataSource.labels[i] = res.data.myBudget[i].title;
-                    createChart();
                 }
+                createChart();
             });
         }
 
