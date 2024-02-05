@@ -27,6 +27,25 @@ app.get('/budget', (req, res) => {
             console.error('Error parsing JSON:', error);
         }
     });
+
+});
+
+app.get('/getD3Data', (req, res) => {
+    const fs = require('fs');
+
+    fs.readFile('d3jsData.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading the file:', err);
+            return;
+        }
+
+        try {
+            const jsonData = JSON.parse(data);
+            res.json(jsonData)
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+        }
+    });
 });
 
 app.listen(port, () => {
